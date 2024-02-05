@@ -1,0 +1,43 @@
+package com.customerdetails.dao.impl;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.customerdetails.dao.CommonDAO;
+import com.customerdetails.utils.HibernateUtils;
+
+@Repository
+public abstract class CommonDAOImpl implements CommonDAO {
+
+	@Autowired
+	private HibernateUtils hibernateUtils;
+
+	@Override
+	public <T> T save(T entity) {
+		return hibernateUtils.save(entity);
+	}
+
+	@Override
+	public void update(Object entity) {
+		hibernateUtils.update(entity);
+	}
+
+	@Override
+	public <T> T delete(T entity) {
+		return hibernateUtils.delete(entity);
+	}
+
+	@Override
+	public <T> T findEntityById(Class<T> entityClass, Serializable primaryId) {
+		return hibernateUtils.findEntityById(entityClass, primaryId);
+	}
+
+	@Override
+	public <T> List<T> loadEntity(Class<T> entityClass) {
+		return hibernateUtils.getAllEntities(entityClass);
+	}
+
+}
