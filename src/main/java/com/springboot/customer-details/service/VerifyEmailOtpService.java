@@ -1,4 +1,4 @@
-package com.jocata.amazon.service;
+package com.customerdetails.service;
 
 import java.util.Date;
 
@@ -11,8 +11,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jocata.amazon.request.VerifyEmailOtpRequest;
-import com.jocata.amazon.response.VerifyEmailOtpResponse;
+import com.customerdetails.request.VerifyEmailOtpRequest;
+import com.customerdetails.response.VerifyEmailOtpResponse;
 
 @Service
 public class VerifyEmailOtpService {
